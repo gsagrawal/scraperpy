@@ -2,8 +2,7 @@
 
 require_once("/protected/view/homeView.php");
 
-
-//Controller class for the requests
+//Controller class for the home page requests
 class homeController {
 
 	private $view;

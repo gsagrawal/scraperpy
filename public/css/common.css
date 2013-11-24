@@ -1,0 +1,16 @@
+body{
+	font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif;
+}
+
+a{
+	color: #91a8ba;
+	font-size: 14px;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+.page-header{
+	padding: 2%;
+}

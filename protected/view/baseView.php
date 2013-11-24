@@ -8,6 +8,9 @@ class baseView {
 
 		$html  = "<html>";
 		$html .= "<head>";
+		$html .= "<link type='text/css' rel='stylesheet' href='".config::BASE_URL."/public/css/reset.css' />";
+		$html .= "<link type='text/css' rel='stylesheet' href='".config::BASE_URL."/public/css/common.css' />";
+		$html .= "<script type='text/javascript' src='".config::BASE_URL."/public/js/jquery-1.10.2.min.js'></script>";
 
 		return $html;
 
@@ -35,9 +38,9 @@ class baseView {
 
 	}
 
-	function getPageSpecificHtml($params){
+	function getPageSpecificBody($params){
 
-		$html  = "<body>";
+		$html  = "";
 		return $html;
 
 	}
@@ -73,10 +76,12 @@ class baseView {
 		$html .= $this->getPageSpecificHead($params);
 		$html .= $this->getCommonHeadClose($params);
 		$html .= $this->getCommonBody($params);
-		$html .= $this->getPageSpecificHtml($params);
+		$html .= $this->getPageSpecificBody($params);
 		$html .= $this->getPageSpecificEndScript($params);
 		$html .= $this->getCommonEndScript($params);
 		$html .= $this->getCommonClose($params);
+
+		print $html;
 
 	}
 
