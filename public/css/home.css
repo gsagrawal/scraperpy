@@ -3,4 +3,26 @@
 	margin-right: 10%;
 	margin-top: 2%;
 }
+.head-Text{
+	text-align: center;
+	font-size: 20px;
+}
 
+#frmInpLink{
+	text-align: center;
+	margin-top: 4%;
+}
+
+#frmInpLink div{
+	margin-top: 1%;
+}
+
+#frmInpLink div input{
+	width: 20%;
+	font-size: 14px;
+	padding: 4px;
+}
+#frmInpLink div input.btnSubmit{
+	width: 5%;
+	cursor: pointer;
+}

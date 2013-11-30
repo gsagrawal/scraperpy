@@ -27,6 +27,25 @@ class homeView extends baseView{
 		$html .= "</div>";
 		$html .= "</div>";
 		$html .= "<div class='page-body'>";
+		$html .= "<div class='head-text'>";
+		$html .= "<h1>Get Notified on Lowest Price</h1>";
+		$html .= "</div>";
+		$html .= "<div>";
+		$html .= "<form id='frmInpLink' action='".config::BASE_URL."/addLink' method='POST'>";
+		$html .= "<div>";
+		$html .= "<input type='url' id='inpLink' required placeholder='Enter a link'/>";
+		$html .= "</div>";
+		$html .= "<div>";
+		$html .= "<input type='number' id='inpTarget' required placeholder='Enter your target Price' />";
+		$html .= "</div>";
+		$html .= "<div>";
+		$html .= "<input type='email' id='inpEmail' required placeholder='Enter your Email to get notified.'/>";
+		$html .= "</div>";
+		$html .= "<div>";
+		$html .= "<input class='btnSubmit' type='submit' value='Notify me'>";
+		$html .= "</div>";
+		$html .= "</form>";
+		$html .= "</div>";
 		$html .= "</div>";
 		$html .= "</div>";
 
