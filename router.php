@@ -8,12 +8,13 @@ class router {
 
 	function router($pReqData){
 
-		$this->routerReq["GET"] =  array();
+		$this->routerReq["GET"]  =  array();
 		$this->routerReq["POST"] =  array();
 
-		$this->routerReq["GET"]["/"] = "homeController"; 
+		$this->routerReq["GET"]["/"]        = "homeController"; 
+		$this->routerReq["POST"]["/addLink"] = "addLinkController"; 
 
-		if(is_array($this->routerReq[$pReqData["REQUEST_METHOD"]])){
+		if(is_array($this->routerReq[$pReqData["REQUEST_METHOD"]])){			
 			$this->reqData = $pReqData;
 		}else{
 

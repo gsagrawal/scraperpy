@@ -33,13 +33,13 @@ class homeView extends baseView{
 		$html .= "<div>";
 		$html .= "<form id='frmInpLink' action='".config::BASE_URL."/addLink' method='POST'>";
 		$html .= "<div>";
-		$html .= "<input type='url' id='inpLink' required placeholder='Enter a link'/>";
+		$html .= "<input type='url' id='inpLink' name='inpLink' required placeholder='Enter a link'/>";
 		$html .= "</div>";
 		$html .= "<div>";
-		$html .= "<input type='number' id='inpTarget' required placeholder='Enter your target Price' />";
+		$html .= "<input type='number' id='inpTarget' name='inpTarget' required placeholder='Enter your target Price' />";
 		$html .= "</div>";
 		$html .= "<div>";
-		$html .= "<input type='email' id='inpEmail' required placeholder='Enter your Email to get notified.'/>";
+		$html .= "<input type='email' id='inpEmail' name='inpEmail' required placeholder='Enter your Email to get notified.'/>";
 		$html .= "</div>";
 		$html .= "<div>";
 		$html .= "<input class='btnSubmit' type='submit' value='Notify me'>";

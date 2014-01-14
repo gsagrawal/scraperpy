@@ -1,7 +1,9 @@
 <?php
 require_once("config.php");
 require_once("router.php");
+require_once("/protected/controller/baseController.php");
 require_once("/protected/controller/homeController.php");
+require_once("/protected/controller/addLinkController.php");
 
 class scraperApp{
 
@@ -28,9 +30,7 @@ class scraperApp{
 
 		try{
 			$rout = new router($this->contData);
-			$contName = $rout->getController();
-			$this->cont = new $contName();
-			$this->cont->init($this->contData);
+			$contName = $rout->getController();			
 		}catch(Exception $exp){
 			$exp_code = $exp->getCode();
 			if($exp_code == 404){
@@ -40,6 +40,14 @@ class scraperApp{
 
 		}
 
+		try{
+			$this->cont = new $contName();
+			$this->cont->init($this->contData);
+		}catch(Exception $exp){
+
+			print "Some Error Occoured";
+		}
+		
 
 	}
 
