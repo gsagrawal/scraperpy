@@ -27,28 +27,11 @@ class scraperApp{
 	public function init(){
 
 		$this->setRequestParams();
-
-		try{
-			$rout = new router($this->contData);
-			$contName = $rout->getController();			
-		}catch(Exception $exp){
-			$exp_code = $exp->getCode();
-			if($exp_code == 404){
-				header("HTTP/1.0 404 Not Found");
-			}
-			print($exp->getMessage());
-
-		}
-
-		try{
-			$this->cont = new $contName();
-			$this->cont->init($this->contData);
-		}catch(Exception $exp){
-
-			print "Some Error Occoured";
-		}
-		
-
+		$rout = new router($this->contData);
+		$contName = $rout->getController();			
+		$this->cont = new $contName();
+		$this->cont->init($this->contData);
+	
 	}
 
 
@@ -57,4 +40,12 @@ class scraperApp{
 
 $app = new scraperApp();
 
-$app->init();
+try{
+	$app->init();
+}catch(Exception $exp){	
+	$exp_code = $exp->getCode();
+	if($exp_code == 404){
+		header("HTTP/1.0 404 Not Found");
+	}
+	print($exp->getMessage());
+}
